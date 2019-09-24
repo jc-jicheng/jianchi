@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <script type="text/javascript">
+    console.log(typeof 123)
+    console.log(typeof typeof 123)
+
+    console.log(typeof null ) //object
+    console.log(typeof {})  //object
+    console.log(typeof function () {})  //function
+
+    /*
+      typeof 的返回值时一个字符串类型
+      typeof 能检测数据类型，当检测引用类型时，不准确
+        typeof null
+        typeof {}
+        typeof []
+        无法区分null/对象/数组
+     */
+
+    /**
+     * A instanceof B
+     * 检查A是否是B的实例对象 --->A是通过new B产生的
+     *
+     * instanceof 无法检测数组
+     * 使用Array.isArray(arr)来检测一个数组是否是数组
+     */
+    console.log({} instanceof Object )  //true
+    console.log([] instanceof Object) //true
+    console.log([] instanceof Array)  //true
+    console.log(function () {} instanceof Function) //true
+
+    console.log(Array.isArray([]));
+
+
+    console.log(NaN === NaN ) //false NaN 不与任何数值相等，包括自身
+    function isNaN(number) {
+      return number !== number
+    }
+
+
+  </script>
+</body>
+</html>
